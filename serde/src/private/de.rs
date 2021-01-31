@@ -200,7 +200,7 @@ pub mod size_hint {
 
     #[inline]
     pub fn cautious(hint: Option<usize>) -> usize {
-        cmp::min(hint.unwrap_or(0), 4096)
+        hint.unwrap_or(0)
     }
 
     fn helper(bounds: (usize, Option<usize>)) -> Option<usize> {
